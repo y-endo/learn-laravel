@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::get('tests/test', 'TestController@index');
+
+// Route::get('contact/', 'ContactFormController@index');
+Route::group(['prefix' => 'contact'], function () {
+    Route::get('/', 'ContactFormController@index') -> name('contact.index');
+});
